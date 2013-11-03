@@ -11,7 +11,7 @@ class Pitch < ActiveRecord::Base
         }
     end
 
-    def rating
+    def self.difficulty_to_rating(difficulty)
         if (difficulty < 5) 
             Pitch.class_ratings[difficulty]
         elsif (difficulty < 5+9) 
@@ -21,5 +21,9 @@ class Pitch < ActiveRecord::Base
             number = 10+(difficulty-14)/4
             "5.#{number}#{letter}"
         end
+    end
+
+    def rating
+        Pitch.difficulty_to_rating(difficulty)
     end
 end

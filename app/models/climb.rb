@@ -1,5 +1,21 @@
 class Climb < ActiveRecord::Base
     has_many :pitches
-    attr_reader :difficulty #numeric difficulty rating of the hardest pitch on the climb
-    attr_reader :rating #string representation of the difficulty of the hardest pitch on the climb
+
+    def difficulty #numeric difficulty rating of the hardest pitch on the climb
+        pitches.map(&:difficulty).max
+    end
+
+    def rating #string representation of the difficulty of the hardest pitch on the climb
+        Pitch.difficulty_to_rating(difficulty)
+    end
+
+    def adjacent_climbs
+        c = self
+        paths = Path.where{(climb1 == c) | (climb2 == c)};
+        climbs = Array.new
+        paths.each do |path| 
+            climbs.push((path.climb1 == c) ? path.climb2 : path.climb1)
+        end
+        climbs
+    end
 end
