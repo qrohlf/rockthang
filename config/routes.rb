@@ -1,4 +1,6 @@
 Rockthang::Application.routes.draw do
+  get "graph/show", to: 'graphs#show'
+  get "graph/graph.json", to: 'graphs#json'
   resources :pitches
 
   resources :climbs

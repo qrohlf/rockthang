@@ -1,6 +1,6 @@
 class Pitch < ActiveRecord::Base
     belongs_to :climb
-    validates_presence_of :climb_id #Pitches must belong to a climb
+    validates_uniqueness_of :number, scope: :climb_id #Can't have two of the same pitch numbers in a climb
 
     def self.class_ratings
         {

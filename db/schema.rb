@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131103025520) do
+ActiveRecord::Schema.define(version: 20131103194055) do
 
   create_table "climbs", force: true do |t|
     t.string   "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20131103025520) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "climb_id"
+    t.integer  "number",     default: 1, null: false
   end
 
 end
