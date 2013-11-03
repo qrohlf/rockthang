@@ -1,0 +1,27 @@
+<h1>Listing climbs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @climbs.each do |climb| %>
+      <tr>
+        <td><%= climb.name %></td>
+        <td><%= link_to 'Show', climb %></td>
+        <td><%= link_to 'Edit', edit_climb_path(climb) %></td>
+        <td><%= link_to 'Destroy', climb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Climb', new_climb_path %>

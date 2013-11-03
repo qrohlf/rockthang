@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Difficulty:</strong>
+  <%= @pitch.difficulty %>
+</p>
+<p>
+  <strong>Rating:</strong>
+  <%= @pitch.rating %>
+</p>
+
+<%= link_to 'Edit', edit_pitch_path(@pitch) %> |
+<%= link_to 'Back', pitches_path %>
