@@ -50,17 +50,18 @@ function do_graph() {
           .attr("class", "node")
           .attr("r", 6)
           .style("fill", function(d) { return color(d.id); })
-          .call(force.drag);;
-
-      node.append("title")
-          .text(function(d) { return d.name; });
+          .call(force.drag);
 
       var label = svg.selectAll(".label")
         .data(graph.nodes)
-        .enter().append("text").text(function(d) { return d.name; });
+        .enter().append("text")
+        .attr("class", "graph-label")
+        .text(function(d) { return d.name; });
     var rating = svg.selectAll(".rating")
         .data(graph.nodes)
-        .enter().append("text").text(function(d) { return d.rating; })
+        .enter().append("text")
+        .attr("class", "graph-label")
+        .text(function(d) { return d.rating; })
         .style("fill", "gray");
 
       force.on("tick", function() {
