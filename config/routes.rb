@@ -1,5 +1,5 @@
 Rockthang::Application.routes.draw do
-  root 'climbs#index'
+  root 'graphs#show'
   get "graph/show", to: 'graphs#show'
   get "graph/graph.json", to: 'graphs#json'
 
