@@ -11,9 +11,14 @@ function do_graph() {
         .gravity(0.06)
         .size([width, height]);
 
-    var svg = d3.select("#graph").append("svg")
-        .attr("width", width)
-        .attr("height", height);
+    $( window ).resize(function() {
+      width = $('#graph').width();
+      height = $('#graph').height();
+      force.size([width, height]);
+      force.start();
+    });
+
+    var svg = d3.select("#graph").append("svg");
 
     var links = [
         {'source': 0, 'target': 1},
