@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Climb</th>
+      <th>Rating</th>
+      <th>Pitches</th>
+      <th>Adjacent Climbs</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @climbs.each do |climb| %>
+      <tr>
+        <td><%= link_to climb.name, climb %></td>
+        <td><%= climb.rating %></td>
+        <td><span class="badge"><%= climb.pitches.count %></span></td>
+        <td><span class="badge"><%= climb.adjacent_climbs.count %></span></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

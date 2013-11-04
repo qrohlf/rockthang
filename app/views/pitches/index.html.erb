@@ -1,9 +1,10 @@
 <h1>Listing pitches</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Difficulty</th>
+      <th>Pitch #</th>
+      <th>Rating</th>
       <th></th>
       <th></th>
       <th></th>
@@ -13,7 +14,8 @@
   <tbody>
     <% @pitches.each do |pitch| %>
       <tr>
-        <td><%= pitch.difficulty %></td>
+        <td><%= pitch.number %></td>
+        <td><%= pitch.rating %></td>
         <td><%= link_to 'Show', pitch %></td>
         <td><%= link_to 'Edit', edit_pitch_path(pitch) %></td>
         <td><%= link_to 'Destroy', pitch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,5 +25,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Pitch', new_pitch_path %>

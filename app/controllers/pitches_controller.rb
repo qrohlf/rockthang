@@ -4,7 +4,7 @@ class PitchesController < ApplicationController
   # GET /pitches
   # GET /pitches.json
   def index
-    @pitches = Pitch.all
+    @pitches = Climb.find(params[:climb_id]).pitches
   end
 
   # GET /pitches/1

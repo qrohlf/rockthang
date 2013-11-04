@@ -1,9 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @climb.name %>
-</p>
+</h1>
+
+<div class="row climb-details">
+    <div class="col-sm-2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Rating
+        </div>
+        <div class="panel-body">
+            <%= @climb.rating %>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm-2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Pitches
+        </div>
+        <div class="panel-body">
+            <%= @climb.pitches.count %>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm-2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Climbs Nearby
+        </div>
+        <div class="panel-body">
+            <%= @climb.adjacent_climbs.count %> 
+        </div>
+    </div>
+    </div>
+</div>
+
+<h2>Adjacent Climbs</h2>
+<% @climbs = @climb.adjacent_climbs %>
+<%= render 'list' %>
 
 <%= link_to 'Edit', edit_climb_path(@climb) %> |
 <%= link_to 'Back', climbs_path %>

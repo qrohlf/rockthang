@@ -1,9 +1,13 @@
 Rockthang::Application.routes.draw do
+  root 'climbs#index'
   get "graph/show", to: 'graphs#show'
   get "graph/graph.json", to: 'graphs#json'
-  resources :pitches
 
-  resources :climbs
+  resources :climbs, shallow: true do
+    resources :pitches
+  end
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
