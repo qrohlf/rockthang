@@ -48,7 +48,8 @@ function do_graph() {
         .enter().append("circle")
           .attr("class", "node")
           .attr("r", 6)
-          .style("fill", function(d) { return color(d.id); });
+          .style("fill", function(d) { return color(d.id); })
+          .call(force.drag);;
 
       node.append("title")
           .text(function(d) { return d.name; });
