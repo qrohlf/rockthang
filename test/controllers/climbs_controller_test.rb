@@ -2,7 +2,8 @@ require 'test_helper'
 
 class ClimbsControllerTest < ActionController::TestCase
   setup do
-    @climb = climbs(:one)
+    load "#{Rails.root}/db/seeds.rb"
+    @climb = Climb.first
   end
 
   test "should get index" do

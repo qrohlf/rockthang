@@ -6,6 +6,7 @@ class Climb < ActiveRecord::Base
     end
 
     def rating #string representation of the difficulty of the hardest pitch on the climb
+        puts "difficulty is nil for #{name}" if difficulty.nil?
         Pitch.difficulty_to_rating(difficulty)
     end
 

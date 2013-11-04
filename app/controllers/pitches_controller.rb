@@ -54,9 +54,10 @@ class PitchesController < ApplicationController
   # DELETE /pitches/1
   # DELETE /pitches/1.json
   def destroy
+    @climb = @pitch.climb
     @pitch.destroy
     respond_to do |format|
-      format.html { redirect_to pitches_url }
+      format.html { redirect_to @climb }
       format.json { head :no_content }
     end
   end

@@ -13,7 +13,7 @@
 
 # helper function to make creating single pitch climbs less of a chore
 def makeSinglePitch(name, difficulty) 
-    puts "Creating single pitch climb named #{name} with difficulty #{Pitch.difficulty_to_rating(difficulty)}"
+    #puts "Creating single pitch climb named #{name} with difficulty #{Pitch.difficulty_to_rating(difficulty)}"
     Climb.create(name: name, pitches: [Pitch.create(difficulty: difficulty)])
 end
 
