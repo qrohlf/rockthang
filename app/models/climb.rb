@@ -1,5 +1,5 @@
 class Climb < ActiveRecord::Base
-    has_many :pitches
+    has_many :pitches, :dependent => :destroy
 
     def difficulty #numeric difficulty rating of the hardest pitch on the climb
         pitches.map(&:difficulty).max

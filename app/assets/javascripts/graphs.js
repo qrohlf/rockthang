@@ -8,6 +8,7 @@ function do_graph() {
     var force = d3.layout.force()
         .charge(-600)
         .linkDistance(110)
+        .gravity(0.06)
         .size([width, height]);
 
     var svg = d3.select("#graph").append("svg")
@@ -63,6 +64,12 @@ function do_graph() {
         .style("fill", "gray");
 
       force.on("tick", function() {
+        graph.nodes.forEach(function(o, i) {
+          if (o.y < 10) o.y = 10;
+          if (o.y > height - 20) o.y = height - 20;
+          if (o.x < 10) o.x = 10;
+          if (o.x > width - 10) o.x = width - 10;
+        });
         link.attr("x1", function(d) { return d.source.x; })
             .attr("y1", function(d) { return d.source.y; })
             .attr("x2", function(d) { return d.target.x; })
