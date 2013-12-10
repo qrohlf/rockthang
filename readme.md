@@ -7,9 +7,10 @@ This is my final project for my Algorithms class at Lewis & Clark College. It's 
 
 Testing
 ---------
-This project has test coverage via Ruby's Test::Unit framework, and any changes automatically kick off a test via Travis-CI. Below, you can see the current testing state of the repository. Detailed testing results and test history can be found at [https://travis-ci.org/qrohlf/rockthang](https://travis-ci.org/qrohlf/rockthang).
+This project has test coverage via Ruby's Test::Unit framework, and any changes automatically kick off a test via Travis-CI. Below, you can see the current testing state of the repository. Detailed testing results and test history can be found at [https://travis-ci.org/qrohlf/rockthang](https://travis-ci.org/qrohlf/rockthang).  The tests themselves can be found in the [test directory](https://github.com/qrohlf/rockthang/tree/master/test) of this repo.
+
 [![Build Status](https://travis-ci.org/qrohlf/rockthang.png)](https://travis-ci.org/qrohlf/rockthang)
 
 Backend
 --------
-The project currently is set up to run on a free Heroku instance at [rockthang.herokuapp.com](http://rockthang.herokuapp.com/). The tests themselves can be found in the [test directory](https://github.com/qrohlf/rockthang/tree/master/test) of this repo.
+The project currently is set up to run on a free Heroku instance at [rockthang.herokuapp.com](http://rockthang.herokuapp.com/). The version running there will be current as long as the build is passing (Travis is configured to push changes to Heroku on successful completion of a build)
