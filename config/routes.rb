@@ -2,6 +2,7 @@ Rockthang::Application.routes.draw do
   root 'graphs#show'
   get "graph/show", to: 'graphs#show'
   get "graph/graph.json", to: 'graphs#json'
+  get "ticklist", to: 'ticklists#show'
 
   resources :climbs, shallow: true do
     resources :pitches
