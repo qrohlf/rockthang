@@ -1,0 +1,27 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Climb</th>
+      <th>Rating</th>
+      <th>Pitches</th>
+      <th>Adjacent Climbs</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% index = 0 %>
+    <% @climbs.each do |climb| %>
+      <% eligible = climb.difficulty <= @maxdiff %>
+      <tr <%= "class=danger" if !eligible %>>
+        <td><%= index += 1 if (eligible) %></td> 
+        <td><%= if eligible; link_to climb.name, climb; else climb.name; end%></td>
+        <td><%= climb.rating %></td>
+        <td><span class="badge"><%= climb.pitches.count %></span></td>
+        <td><span class="badge"><%= climb.adjacent_climbs.count %></span></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
