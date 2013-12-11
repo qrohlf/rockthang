@@ -1,0 +1,13 @@
+<p style="margin-top: 3em">Hi! Please enter your climbing preferences below</p>
+<%= render partial: "form" %>
+<h1>Your Ticklist</h1>
+<% if @climbs and @climbs.size > 0 %>
+    <%= render partial: "climbs/list" %>
+<% else %>
+    <p>Sorry, we couldn't find any climbs that matched your criteria.</p>
+    <p>Wouldn't you prefer a nice game of chess?</p>
+<% end %>
+
+<pre>
+<%= @debug %>
+</pre>
