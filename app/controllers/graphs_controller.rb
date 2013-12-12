@@ -1,7 +1,6 @@
 class GraphsController < ApplicationController
   def show
     # Show a graph of all the climbs in the database
-    # hideously hacky solution that should be done client-side.
     
   end
 
