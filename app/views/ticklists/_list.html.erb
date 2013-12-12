@@ -21,6 +21,11 @@
         <td><span class="badge"><%= climb.adjacent_climbs.count %></span></td>
       </tr>
     <% end %>
+    <% if @climbs.count{|c| c.difficulty <= @maxdiff} < @length %>
+      <tr>
+        <td colspan="5">Sorry, we don't have enough climbs in our database to fill your whole ticklist. Try upping your difficulty for a longer list.</td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 

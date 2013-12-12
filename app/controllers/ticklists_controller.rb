@@ -31,7 +31,7 @@ class TicklistsController < ApplicationController
         end
         @climbs = bestpath
     else
-        params["difficulty"] = 13
+        params["difficulty"] = 16
         params["length"] = 5
     end
     

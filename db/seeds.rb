@@ -21,9 +21,15 @@ end
 cocaineGulleyLeft = Array.new
 
 cocaineGulleyLeft << makeSinglePitch("Earth 2º", 16)
-cocaineGulleyLeft << makeSinglePitch("Baked Mudfest", 17)
-cocaineGulleyLeft << makeSinglePitch("Hippos on Ice", 15)
+cocaineGulleyLeft << mudfest = makeSinglePitch("Baked Mudfest", 17)
+roam = makeSinglePitch("Wherever I May Roam", 13)
+Path.create(climb1: roam, climb2: mudfest)
+cocaineGulleyLeft << hippo = makeSinglePitch("Hippos on Ice", 15)
+Path.create(climb1: roam, climb2: hippo)
+clams = makeSinglePitch("Dances with Clams", 14)
+Path.create(climb1: roam, climb2: clams)
 cocaineGulleyLeft << thieves = makeSinglePitch("Thieves", 22)
+Path.create(climb1: clams, climb2: thieves)
 
 cocaineGulleyLeft.each_with_index do |climb, i|
     break if i == cocaineGulleyLeft.count - 1
@@ -34,6 +40,10 @@ end
 # It contains 2 climbs which both start at the same place
 gimmeshelter = makeSinglePitch("Gimme Shelter", 21)
 Path.create(climb1: thieves, climb2: gimmeshelter)
+red = makeSinglePitch("Rudolph The Red", 10)
+Path.create(climb1: gimmeshelter, climb2: red)
+cowdog = makeSinglePitch("Voyage of the Cow Dog", 11)
+Path.create(climb1: red, climb2: cowdog)
 
 mainst = makeSinglePitch("Exile on Main Street", 18)
 Path.create(climb1: thieves, climb2: mainst)
@@ -46,9 +56,12 @@ cocaineGulleyUpperLeft << bloodshot = makeSinglePitch("Bloodshot", 19)
 Path.create(climb1: gimmeshelter, climb2: bloodshot) # The Rolling Stones wall is accessible via bloodshot
 Path.create(climb1: mainst, climb2: bloodshot)       # The Rolling Stones wall is accessible via bloodshot
 cocaineGulleyUpperLeft << makeSinglePitch("Quest to Fire", 22)
+cocaineGulleyUpperLeft << makeSinglePitch("Choinard Crack", 13)
 cocaineGulleyUpperLeft << makeSinglePitch("Crack Babies", 23)
+cocaineGulleyUpperLeft << makeSinglePitch("Papillon", 12)
 cocaineGulleyUpperLeft << makeSinglePitch("Crack Cocaine", 21)
-cocaineGulleyUpperLeft << makeSinglePitch("Bongo Fury", 26)
+cocaineGulleyUpperLeft << bongo = makeSinglePitch("Bongo Fury", 26)
+Path.create(climb1: bongo, climb2: thieves)
 cocaineGulleyUpperLeft << makeSinglePitch("Runt", 29)
 cocaineGulleyUpperLeft << makeSinglePitch("Stand and Deliver", 24)
 #I'm including Churning Buttress in the upper left wall group here.

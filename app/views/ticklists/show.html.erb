@@ -1,10 +1,12 @@
-<p style="margin-top: 3em">Hi! Please enter your climbing preferences below</p>
+<h2><small>Hi! Please enter your climbing preferences below</small></h2>
 <%= render partial: "form" %>
-<h1>Your Ticklist</h1>
-<p>(Red climbs are on your route, but do not fit your criteria and are not included in the ticklist total)</p>
-<% if @climbs and @climbs.size > 0 %>
-    <%= render partial: "list" %>
-<% else %>
-    <p>Sorry, we couldn't find any climbs that matched your criteria.</p>
-    <p>Wouldn't you prefer a nice game of chess?</p>
+<% if @climbs != nil %>
+    <h1>Your Ticklist</h1>
+    <p>(Red climbs are on your route, but do not fit your criteria and are not included in the ticklist total)</p>
+    <% if @climbs and @climbs.size > 0 %>
+        <%= render partial: "list" %>
+    <% else %>
+        <p>Sorry, we couldn't find any climbs that matched your criteria.</p>
+        <p>Wouldn't you prefer a nice game of chess?</p>
+    <% end %>
 <% end %>
