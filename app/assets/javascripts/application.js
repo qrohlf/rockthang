@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+new Konami(function() { 
+    $('#konami').modal({backdrop: 'static'});
+    $('#konami').on('shown.bs.modal', function (e) {
+        Froogaloop('vimeo').api('play');
+    })
+    $('#konami').on('hidden.bs.modal', function (e) {
+        Froogaloop('vimeo').api('pause');
+    })
+});
