@@ -13,4 +13,4 @@ This project has test coverage via Ruby's Test::Unit framework, and any changes 
 
 Backend
 --------
-The project currently is set up to run on a free Heroku instance at [rockthang.herokuapp.com](http://rockthang.herokuapp.com/). The version running there will be current as long as the build is passing (Travis is configured to push changes to Heroku on successful completion of a build)
+The project currently is set up to run on a free Heroku instance at [rockthang.herokuapp.com](http://rockthang.herokuapp.com/).

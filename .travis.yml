@@ -2,13 +2,3 @@ language: ruby
 rvm:
   - 2.0.0
 script: bundle exec rake test TESTOPTS=-v
-deploy:
-  provider: heroku
-  strategy: git
-  api_key:
-    secure: nMTvnl4ht0ClPp/c8fDJhY9TtFV49awG1CfqMfsKgDzYrXmqrHIWk4Qt1ZdAAmcRUbD8B/4rCgc/dkLua/o/63/1w5FPr/kVbinl6uE8lrQ0cBIt7NpeaTsnUENQe//Qr7ay0+B9UKTgC67mIwiVwBAr/EyToSI5Wbdqsk7D2EI=
-  app: rockthang
-after_deploy:
-  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-  - heroku pg:reset DATABASE_URL --confirm rockthang
-  - heroku run rake db:setup
